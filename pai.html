@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="radio" id="dlugie" name="wlosy" onclick="check()" >
+    <input type="radio" id="krotkie" name="wlosy" onclick="check()">
+    <input type="radio" id="srednie" name="wlosy" onclick="check()">
+    
+    <p id="wynik"></p>
+    
+    <script>
+    function check()   { 
+        if (document.getElementById("dlugie").checked == true)
+        {
+            document.getElementById("wynik").innerHTML = "50";
+        }
+        else if (document.getElementById("krotkie").checked)
+        {
+            document.getElementById("wynik").innerHTML = "30";
+        }
+        else if (document.getElementById("srednie").checked)
+        {
+            document.getElementById("wynik").innerHTML = "15";
+        }
+
+     }
+
+
+    </script>
+    
+</body>
+</html>

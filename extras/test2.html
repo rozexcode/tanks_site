@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+
+.container {
+  display: inline;
+  position: relative;
+  padding-left: 100px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 150px;
+  background-color: rgb(241, 14, 14);
+  
+ 
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+</style>
+
+<body onLoad="preLoad()">
+    <form autocomplete="off">
+
+        <img id="a" src="images/pl01-1.jpg" width="802" height="602" alt="">
+        <div id="nazwa">Czarny</div>
+
+
+<label class="container">Czarny
+    <input type="radio" name="1" value="Czarny" onClick="im('a1'); changeDivContent(this);" checked>
+  <span class="checkmark"></span>
+</label>
+<label class="container">Pustynny
+    <input type="radio" name="1" value="Biały" onClick="im('a2'); changeDivContent(this);">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Różowy
+    <input type="radio" name="1" value="Niebieski" onClick="im('a3'); changeDivContent(this);">
+  <span class="checkmark"></span>
+</label>
+
+
+
+
+
+
+
+
+<script>
+    function preLoad() {
+      a1 = new Image; a1.src = 'images/pl01-1.jpg';  
+      a2 = new Image; a2.src = 'images/pl01-2.jpg';
+      a3 = new Image; a3.src = 'images/pl01-3.jpeg';
+    }
+    function im(image) {
+      document.getElementById(image[0]).src = eval(image + ".src")
+    }
+
+    function changeDivContent(btn) {
+    nazwa.innerHTML = btn.value
+}   
+    </script>
+      
+    
+    
+
+        
+      
+    
+    
+    
+    
+
+
+</body>
+</html>
